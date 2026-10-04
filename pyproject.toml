@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "context-loom"
+version = "0.1.0"
+description = "Inspectable context compaction for coding agents"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = []
+
+[project.optional-dependencies]
+models = ["torch>=2.6,<3", "transformers>=4.51,<6", "safetensors>=0.5"]
+evaluation = ["llmlingua==0.2.2", "pytest>=8,<10"]
+
+[project.scripts]
+loom = "context_loom.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["context_loom*"]

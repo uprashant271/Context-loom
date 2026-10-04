@@ -1,0 +1,33 @@
+{
+  "case_id": "unknown-state",
+  "difficulty": "abstention",
+  "method": "llmlingua2",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 5.526569458015729,
+  "artifact": {
+    "status": "ready",
+    "reason": null,
+    "replacement_messages": [
+      {
+        "id": "llmlingua-summary",
+        "role": "assistant",
+        "content": "[ user id = abs - 1 ] \n Prepare the readiness note ; do not infer production status from local checks. \n \n [ assistant id = abs - 2 ] \n A local formatter check passed. No staging or production rollout was performed. No deployment version or production smoke - test result is present in this session. \n \n [ user id = abs - 3 ] \n Use the available evidence only. \n \n [ assistant id = abs - 4 ] \n I will list the formatter result and the outstanding rollout validation."
+      }
+    ],
+    "compacted_tokens": 133,
+    "model": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+    "attempts": [
+      {
+        "requested_rate": 1.0,
+        "counter_count": 133
+      }
+    ],
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 124
+    }
+  },
+  "status": "ready"
+}

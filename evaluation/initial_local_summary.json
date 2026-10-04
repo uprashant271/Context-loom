@@ -1,0 +1,118 @@
+{
+  "status": "measured_no_improvement_established",
+  "evaluation_scope": "synthetic_qa_retention",
+  "fixture_count": 6,
+  "method_count": 5,
+  "trial_count": 30,
+  "completed_reader_trials": 14,
+  "all_required_qa_passes": 0,
+  "statuses": {
+    "ready": 11,
+    "error": 15,
+    "compacted": 3,
+    "blocked": 1
+  },
+  "qa_results_available": true,
+  "models": {
+    "ranker": "Qwen/Qwen3-Reranker-0.6B",
+    "summarizer": "Qwen/Qwen3-0.6B",
+    "reader": "Qwen/Qwen3-0.6B",
+    "llmlingua": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank"
+  },
+  "resolved_generative_revisions": [],
+  "budgets": {
+    "final_memory": 512,
+    "hybrid_summary_allowance": 192,
+    "hybrid_source_selection": 768
+  },
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "metrics": [
+    {
+      "method": "full_llm_summary",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 2,
+      "failed_or_blocked_cases": 4,
+      "passed_cases": 0,
+      "pass_fraction": 0.0,
+      "qa_pass_fraction_completed_only": 0.0,
+      "required_field_recall_completed_only": 0.125,
+      "mean_compaction_seconds": 2.111617993340284,
+      "mean_reader_seconds_completed_only": 0.3946277085051406
+    },
+    {
+      "method": "hybrid",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 3,
+      "failed_or_blocked_cases": 3,
+      "passed_cases": 0,
+      "pass_fraction": 0.0,
+      "qa_pass_fraction_completed_only": 0.0,
+      "required_field_recall_completed_only": 0.2727272727272727,
+      "mean_compaction_seconds": 2.8249422293398916,
+      "mean_reader_seconds_completed_only": 0.43137448633206077
+    },
+    {
+      "method": "llmlingua2",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 3,
+      "failed_or_blocked_cases": 3,
+      "passed_cases": 0,
+      "pass_fraction": 0.0,
+      "qa_pass_fraction_completed_only": 0.0,
+      "required_field_recall_completed_only": 0.25,
+      "mean_compaction_seconds": 0.32692453466976684,
+      "mean_reader_seconds_completed_only": 0.4607585833291523
+    },
+    {
+      "method": "protected_recency",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 3,
+      "failed_or_blocked_cases": 3,
+      "passed_cases": 0,
+      "pass_fraction": 0.0,
+      "qa_pass_fraction_completed_only": 0.0,
+      "required_field_recall_completed_only": 0.45454545454545453,
+      "mean_compaction_seconds": 0.0045985624989649905,
+      "mean_reader_seconds_completed_only": 0.6404473336491113
+    },
+    {
+      "method": "recency",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 3,
+      "failed_or_blocked_cases": 3,
+      "passed_cases": 0,
+      "pass_fraction": 0.0,
+      "qa_pass_fraction_completed_only": 0.0,
+      "required_field_recall_completed_only": 0.45454545454545453,
+      "mean_compaction_seconds": 0.004443743178853765,
+      "mean_reader_seconds_completed_only": 1.2614120280001468
+    }
+  ],
+  "findings": [
+    "No method passed all required fields on any of the six authored cases.",
+    "The tiny reader often omitted fields even when original evidence was retained.",
+    "JSON/output/schema failures remain in the results; they were not retried or repaired.",
+    "Field-recall percentages over completed rows have differing denominators and are not a fair ranking of methods.",
+    "Some first-run reader responses contained an extra type property; strict additional-properties schema validation was not enforced then."
+  ],
+  "not_measured": [
+    "comparison against a stronger standard LLM",
+    "coding task completion",
+    "native agent compaction",
+    "production memory quality"
+  ],
+  "claude_blocker": "OAuth session expired and could not be refreshed",
+  "raw_artifact": "runs/local-512-final/results.json",
+  "selection_artifact": "runs/selection-512/results.json",
+  "observed_cached_model_revisions_after_run": {
+    "Qwen/Qwen3-Reranker-0.6B": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "Qwen/Qwen3-0.6B": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank": "5f0c82792b7ea14c6484e015b6a072009496b7f2"
+  },
+  "first_run_reader_schema_caveat": "Required answer:string and abstain:boolean checked; extra properties were not rejected in this run. Subsequent provider hardening is not reflected in these preserved scores."
+}

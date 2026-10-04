@@ -1,0 +1,14 @@
+{
+  "case_id": "correction",
+  "difficulty": "correction",
+  "method": "full_llm_summary",
+  "evaluation_scope": "synthetic_qa_retention",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "status": "error",
+  "error": "RuntimeError: Claude exited 1; check local authentication and version compatibility",
+  "compaction_seconds": 0.40760654100449756,
+  "provider_trace_at_error": {
+    "available": false,
+    "note": "Provider did not expose a raw response envelope"
+  }
+}

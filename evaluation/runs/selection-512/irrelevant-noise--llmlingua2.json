@@ -1,0 +1,37 @@
+{
+  "case_id": "irrelevant-noise",
+  "difficulty": "irrelevant_noise",
+  "method": "llmlingua2",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 7.170978665992152,
+  "artifact": {
+    "status": "ready",
+    "reason": null,
+    "replacement_messages": [
+      {
+        "id": "llmlingua-summary",
+        "role": "assistant",
+        "content": "noise - 1 \n Finish worker queue capacity 64 raise \n \n - 2 \n Accepted queue decision capacity 64 reject excess work QueueFull test capacity boundary \n \n noise - 3 \n \n \n \nfiller conversation outside coding task \n \n - 5 \n explored \n \n noise - 6 \n \n \n - 7 \n train routes walking times museum opening schedules lunch menus weekend weatherfiller conversation compares train routes museum train routes \n \n \n explored reading lists \n \n \n speculative redesign unrelated gallery considers beige backgrounds titles image captions carouselredesign unrelated gallery considers beige backgrounds captions carousel beige carousel considers beige backgrounds carousel \n \n \n planning compares \n \n \n explored sorting reading listsimplementation experiment explored sorting reading lists filtering bookmarks icons article cards exporting reading queue \n \n 12 \n beige backgrounds. \n \n 13 \n compares train. \n \n 14 \n12 experiment explored lists \n \n \n 13 backgrounds \n \n 16 \n 14 travel planning compares train routes walking times museum schedules lunch menus weekend weather filler conversationunrelated travel planning compares train routes \n \n \n explored reading lists \n \n \n speculative redesign unrelated gallery beige backgrounds large serif titles image captions carouselredesign unrelated gallery considers beige backgrounds captions carousel beige backgrounds carousel considers beige backgrounds carousel \n \n \n compares train \n \n \n explored sorting reading listsimplementation experiment explored sorting reading lists filtering bookmarks icons article cards exporting reading queue \n \n 21 \n beige backgrounds. \n \n 22 \n compares train. \n \n 23 \n21 experiment explored \n \n \n 22 backgrounds \n \n 25 \n 23 travel planning compares train routes walking times schedules lunch menus weekend weather filler conversation outside coding taskunrelated travel planning compares train \n \n \n explored reading lists \n \n \n Return bounded original queue behavior regression test \n \n \n resume original implementation after unrelated"
+      }
+    ],
+    "compacted_tokens": 470,
+    "model": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+    "attempts": [
+      {
+        "requested_rate": 0.11802674043337943,
+        "counter_count": 610
+      },
+      {
+        "requested_rate": 0.08915856064213319,
+        "counter_count": 470
+      }
+    ],
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 4557
+    }
+  },
+  "status": "ready"
+}

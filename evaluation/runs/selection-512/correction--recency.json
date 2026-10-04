@@ -1,0 +1,59 @@
+{
+  "case_id": "correction",
+  "difficulty": "correction",
+  "method": "recency",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 0.0021359169913921505,
+  "artifact": {
+    "status": "ready",
+    "replacement_messages": [
+      {
+        "id": "corr-1",
+        "role": "user",
+        "content": "We need a local task index. Initial thought: use Redis and a 10 minute cache expiry."
+      },
+      {
+        "id": "corr-2",
+        "role": "assistant",
+        "content": "Draft plan: add a Redis client and expire entries after 10 minutes. This is a proposal awaiting approval."
+      },
+      {
+        "id": "corr-3",
+        "role": "user",
+        "content": "Correction to the draft: use SQLite from the standard library, no Redis dependency. The accepted expiry is 45 minutes. This replaces the earlier 10 minute proposal."
+      },
+      {
+        "id": "corr-4",
+        "role": "assistant",
+        "content": "I will implement SQLite storage and leave migration validation as pending work."
+      },
+      {
+        "id": "corr-5",
+        "role": "user",
+        "content": "Keep the public method name lookup_task unchanged."
+      },
+      {
+        "id": "corr-6",
+        "role": "assistant",
+        "content": "I have inspected lookup_task and located the storage boundary. No implementation or migration validation has run yet."
+      }
+    ],
+    "retained_ids": [
+      "corr-1",
+      "corr-2",
+      "corr-3",
+      "corr-4",
+      "corr-5",
+      "corr-6"
+    ],
+    "compacted_tokens": 217,
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 217
+    },
+    "description": "Reverse-chronological complete groups, skipping groups that do not fit; source order restored"
+  },
+  "status": "ready"
+}

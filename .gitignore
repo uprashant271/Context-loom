@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.loom/
+*.egg-info/
+.env
+node_modules/
+site/.git/
+site/.sites-runtime/
+
+.pytest_cache/
+plugin/.claude-plugin/types/

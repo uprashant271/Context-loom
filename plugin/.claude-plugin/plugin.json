@@ -1,0 +1,8 @@
+{
+  "name": "context-loom",
+  "version": "0.1.0",
+  "description": "Selects relevant context before Claude's native summary and retains explicit pins verbatim.",
+  "author": { "name": "Prashant Upadhyay" },
+  "license": "MIT",
+  "keywords": ["context", "compaction", "memory"]
+}

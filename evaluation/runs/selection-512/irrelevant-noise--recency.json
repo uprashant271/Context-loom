@@ -1,0 +1,53 @@
+{
+  "case_id": "irrelevant-noise",
+  "difficulty": "irrelevant_noise",
+  "method": "recency",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 0.02362179200281389,
+  "artifact": {
+    "status": "ready",
+    "replacement_messages": [
+      {
+        "id": "noise-2",
+        "role": "assistant",
+        "content": "Accepted queue decision: capacity 64, reject excess work with QueueFull. The relevant regression is test_capacity_boundary in tests/test_worker.py."
+      },
+      {
+        "id": "noise-25",
+        "role": "user",
+        "content": "Archived side discussion 23: An unrelated travel planning example compares train routes, walking times, museum opening schedules, lunch menus and weekend weather. This is filler conversation outside the coding task. An unrelated travel planning example compares train routes, walking times, museum opening schedules, lunch menus and weekend weather. This is filler conversation outside the coding task. An unrelated travel planning example compares train routes, walking times, museum opening schedules, lunch menus and weekend weather. This is filler conversation outside the coding task. An unrelated travel planning example compares train routes, walking times, museum opening schedules, lunch menus and weekend weather. This is filler conversation outside the coding task. An unrelated travel planning example compares train routes, walking times, museum opening schedules, lunch menus and weekend weather. This is filler conversation outside the coding task."
+      },
+      {
+        "id": "noise-26",
+        "role": "assistant",
+        "content": "Archived side discussion 24: An old experiment explored sorting reading lists alphabetically, filtering bookmarks, choosing icons, displaying article cards and exporting a reading queue. It was never part of the bounded worker implementation. An old experiment explored sorting reading lists alphabetically, filtering bookmarks, choosing icons, displaying article cards and exporting a reading queue. It was never part of the bounded worker implementation. An old experiment explored sorting reading lists alphabetically, filtering bookmarks, choosing icons, displaying article cards and exporting a reading queue. It was never part of the bounded worker implementation. An old experiment explored sorting reading lists alphabetically, filtering bookmarks, choosing icons, displaying article cards and exporting a reading queue. It was never part of the bounded worker implementation. An old experiment explored sorting reading lists alphabetically, filtering bookmarks, choosing icons, displaying article cards and exporting a reading queue. It was never part of the bounded worker implementation."
+      },
+      {
+        "id": "noise-27",
+        "role": "user",
+        "content": "Return to the bounded worker queue; keep the original accepted queue behavior and find the relevant regression test."
+      },
+      {
+        "id": "noise-28",
+        "role": "assistant",
+        "content": "I am ready to resume the original implementation after the unrelated discussions."
+      }
+    ],
+    "retained_ids": [
+      "noise-2",
+      "noise-25",
+      "noise-26",
+      "noise-27",
+      "noise-28"
+    ],
+    "compacted_tokens": 488,
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 4557
+    },
+    "description": "Reverse-chronological complete groups, skipping groups that do not fit; source order restored"
+  },
+  "status": "ready"
+}

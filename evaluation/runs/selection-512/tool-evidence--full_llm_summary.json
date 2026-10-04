@@ -1,0 +1,13 @@
+{
+  "case_id": "tool-evidence",
+  "difficulty": "tool_evidence",
+  "method": "full_llm_summary",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 7.499766070395708e-07,
+  "artifact": {
+    "status": "skipped",
+    "reason": "selection-only mode does not call the LLM"
+  },
+  "status": "skipped"
+}

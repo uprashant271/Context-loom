@@ -1,0 +1,47 @@
+{
+  "case_id": "unknown-state",
+  "difficulty": "abstention",
+  "method": "protected_recency",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 0.0009698329959064722,
+  "artifact": {
+    "status": "ready",
+    "replacement_messages": [
+      {
+        "id": "abs-1",
+        "role": "user",
+        "content": "Prepare the readiness note; do not infer production status from local checks."
+      },
+      {
+        "id": "abs-2",
+        "role": "assistant",
+        "content": "A local formatter check passed. No staging or production rollout was performed. No deployment version or production smoke-test result is present in this session."
+      },
+      {
+        "id": "abs-3",
+        "role": "user",
+        "content": "Use the available evidence only."
+      },
+      {
+        "id": "abs-4",
+        "role": "assistant",
+        "content": "I will list the formatter result and the outstanding rollout validation."
+      }
+    ],
+    "retained_ids": [
+      "abs-1",
+      "abs-2",
+      "abs-3",
+      "abs-4"
+    ],
+    "compacted_tokens": 124,
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 124
+    },
+    "description": "Reverse-chronological complete groups, skipping groups that do not fit; source order restored"
+  },
+  "status": "ready"
+}

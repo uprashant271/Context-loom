@@ -1,0 +1,5 @@
+{
+  "description": "Context Loom experimental native compaction adapter",
+  "modules": ["./register.js"],
+  "hooks": {}
+}

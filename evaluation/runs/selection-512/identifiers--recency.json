@@ -1,0 +1,59 @@
+{
+  "case_id": "identifiers",
+  "difficulty": "exact_identifiers",
+  "method": "recency",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 0.0024368340091314167,
+  "artifact": {
+    "status": "ready",
+    "replacement_messages": [
+      {
+        "id": "id-1",
+        "role": "user",
+        "content": "Synthetic issue SYN-184 concerns src/cache/ttl.ts. Trace this exact request identifier: req_7H4c91A2b. Compare against synthetic commit 9c7e2b1."
+      },
+      {
+        "id": "id-2",
+        "role": "assistant",
+        "content": "Located src/cache/ttl.ts. The comparison commit is 9c7e2b1; req_7H4c91A2b is the relevant request."
+      },
+      {
+        "id": "id-3",
+        "role": "user",
+        "content": "An unrelated discussion used req_7H4c91A2c, but that identifier belongs to a separate case."
+      },
+      {
+        "id": "id-4",
+        "role": "assistant",
+        "content": "The expiry guard compares elapsed_ms to ttl_ms. I will inspect the zero-value behavior next."
+      },
+      {
+        "id": "id-5",
+        "role": "user",
+        "content": "Continue with the original regression, without changing exported names."
+      },
+      {
+        "id": "id-6",
+        "role": "assistant",
+        "content": "The next step is to trace the elapsed-time calculation."
+      }
+    ],
+    "retained_ids": [
+      "id-1",
+      "id-2",
+      "id-3",
+      "id-4",
+      "id-5",
+      "id-6"
+    ],
+    "compacted_tokens": 244,
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 244
+    },
+    "description": "Reverse-chronological complete groups, skipping groups that do not fit; source order restored"
+  },
+  "status": "ready"
+}

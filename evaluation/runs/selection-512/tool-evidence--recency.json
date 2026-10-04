@@ -1,0 +1,93 @@
+{
+  "case_id": "tool-evidence",
+  "difficulty": "tool_evidence",
+  "method": "recency",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 0.0025233749765902758,
+  "artifact": {
+    "status": "ready",
+    "replacement_messages": [
+      {
+        "id": "tool-1",
+        "role": "user",
+        "content": "Investigate the worker-queue tests. Earlier success must not be reported as validation of later edits."
+      },
+      {
+        "id": "tool-2",
+        "role": "assistant",
+        "content": "Checking the tests before editing.",
+        "tool_calls": [
+          {
+            "id": "call-old",
+            "type": "function",
+            "function": {
+              "name": "shell",
+              "arguments": "{\"command\": \"python -m unittest tests.test_queue\"}"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tool-3",
+        "role": "tool",
+        "content": "BEFORE EDIT: Ran 4 tests. OK. Exit code 0.",
+        "tool_call_id": "call-old"
+      },
+      {
+        "id": "tool-4",
+        "role": "assistant",
+        "content": "I changed the queue admission guard. Checking the updated tests now.",
+        "tool_calls": [
+          {
+            "id": "call-new",
+            "type": "function",
+            "function": {
+              "name": "shell",
+              "arguments": "{\"command\": \"python -m unittest tests.test_queue\"}"
+            }
+          }
+        ]
+      },
+      {
+        "id": "tool-5",
+        "role": "tool",
+        "content": "AFTER EDIT: FAIL: test_reject_after_close (tests.test_queue.QueueTests). AssertionError: expected QueueClosed, got None at src/queue.py:41. Ran 4 tests. FAILED (failures=1). Exit code 1.",
+        "tool_call_id": "call-new"
+      },
+      {
+        "id": "tool-6",
+        "role": "assistant",
+        "content": "The updated test run failed. I have not applied a fix since that run."
+      },
+      {
+        "id": "tool-7",
+        "role": "user",
+        "content": "Continue the diagnosis and keep the tool evidence attached to its command."
+      },
+      {
+        "id": "tool-8",
+        "role": "assistant",
+        "content": "I will inspect the admission branch around the reported line."
+      }
+    ],
+    "retained_ids": [
+      "tool-1",
+      "tool-2",
+      "tool-3",
+      "tool-4",
+      "tool-5",
+      "tool-6",
+      "tool-7",
+      "tool-8"
+    ],
+    "compacted_tokens": 355,
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 355
+    },
+    "description": "Reverse-chronological complete groups, skipping groups that do not fit; source order restored"
+  },
+  "status": "ready"
+}

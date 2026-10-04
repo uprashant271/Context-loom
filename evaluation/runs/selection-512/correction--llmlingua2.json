@@ -1,0 +1,33 @@
+{
+  "case_id": "correction",
+  "difficulty": "correction",
+  "method": "llmlingua2",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 98.32249908300582,
+  "artifact": {
+    "status": "ready",
+    "reason": null,
+    "replacement_messages": [
+      {
+        "id": "llmlingua-summary",
+        "role": "assistant",
+        "content": "[ user id = corr - 1 ] \n We need a local task index. Initial thought : use Redis and a 10 minute cache expiry. \n \n [ assistant id = corr - 2 ] \n Draft plan : add a Redis client and expire entries after 10 minutes. This is a proposal awaiting approval. \n \n [ user id = corr - 3 ] \n Correction to the draft : use SQLite from the standard library, no Redis dependency. The accepted expiry is 45 minutes. This replaces the earlier 10 minute proposal. \n \n [ assistant id = corr - 4 ] \n I will implement SQLite storage and leave migration validation as pending work. \n \n [ user id = corr - 5 ] \n Keep the public method name lookup _ task unchanged. \n \n [ assistant id = corr - 6 ] \n I have inspected lookup _ task and located the storage boundary. No implementation or migration validation has run yet."
+      }
+    ],
+    "compacted_tokens": 225,
+    "model": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+    "attempts": [
+      {
+        "requested_rate": 1.0,
+        "counter_count": 225
+      }
+    ],
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 217
+    }
+  },
+  "status": "ready"
+}

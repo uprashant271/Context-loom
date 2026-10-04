@@ -1,0 +1,145 @@
+{
+  "status": "development_comparison_measured_no_superiority_established",
+  "evaluation_scope": "synthetic_qa_retention",
+  "fixture_count": 6,
+  "method_count": 5,
+  "trial_count": 30,
+  "completed_reader_trials": 30,
+  "all_required_qa_passes": 27,
+  "statuses": {
+    "ready": 24,
+    "compacted": 6
+  },
+  "qa_results_available": true,
+  "development_rerun": true,
+  "held_out_evaluation": false,
+  "independent_confirmation": false,
+  "models": {
+    "ranker": "Qwen/Qwen3-Reranker-0.6B",
+    "summarizer": [
+      "claude-haiku-4-5"
+    ],
+    "reader": [
+      "claude-haiku-4-5"
+    ],
+    "llmlingua": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank"
+  },
+  "budgets": {
+    "final_memory": 512,
+    "hybrid_summary_allowance": 192,
+    "hybrid_source_selection": 768
+  },
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "metrics": [
+    {
+      "method": "full_llm_summary",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 6,
+      "failed_or_blocked_cases": 0,
+      "passed_cases": 6,
+      "pass_fraction": 1.0,
+      "qa_pass_fraction_completed_only": 1.0,
+      "required_field_recall_completed_only": 1.0,
+      "mean_compaction_seconds": 7.400886215158001,
+      "mean_reader_seconds_completed_only": 4.295459965345799
+    },
+    {
+      "method": "hybrid",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 6,
+      "failed_or_blocked_cases": 0,
+      "passed_cases": 6,
+      "pass_fraction": 1.0,
+      "qa_pass_fraction_completed_only": 1.0,
+      "required_field_recall_completed_only": 1.0,
+      "mean_compaction_seconds": 8.872497555663964,
+      "mean_reader_seconds_completed_only": 4.823084916662386
+    },
+    {
+      "method": "llmlingua2",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 6,
+      "failed_or_blocked_cases": 0,
+      "passed_cases": 4,
+      "pass_fraction": 0.6666666666666666,
+      "qa_pass_fraction_completed_only": 0.6666666666666666,
+      "required_field_recall_completed_only": 0.9,
+      "mean_compaction_seconds": 0.30819821532835096,
+      "mean_reader_seconds_completed_only": 7.031563138826944
+    },
+    {
+      "method": "protected_recency",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 6,
+      "failed_or_blocked_cases": 0,
+      "passed_cases": 5,
+      "pass_fraction": 0.8333333333333334,
+      "qa_pass_fraction_completed_only": 0.8333333333333334,
+      "required_field_recall_completed_only": 0.9,
+      "mean_compaction_seconds": 0.0061832708355116965,
+      "mean_reader_seconds_completed_only": 1.8056846945061504
+    },
+    {
+      "method": "recency",
+      "planned_cases": 6,
+      "skipped_cases": 0,
+      "completed_reader_cases": 6,
+      "failed_or_blocked_cases": 0,
+      "passed_cases": 6,
+      "pass_fraction": 1.0,
+      "qa_pass_fraction_completed_only": 1.0,
+      "required_field_recall_completed_only": 1.0,
+      "mean_compaction_seconds": 0.006145729503865975,
+      "mean_reader_seconds_completed_only": 5.555240888832486
+    }
+  ],
+  "provider_call_count": 42,
+  "observed_total_cost_usd": 0.493398,
+  "observed_cached_model_revisions_after_run": {
+    "Qwen/Qwen3-Reranker-0.6B": "e61197ed45024b0ed8a2d74b80b4d909f1255473",
+    "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank": "5f0c82792b7ea14c6484e015b6a072009496b7f2"
+  },
+  "long_noise_case": {
+    "input_count": 4557,
+    "selected_source_count": 746,
+    "hybrid_final_memory_count": 268,
+    "full_llm_final_memory_count": 79
+  },
+  "findings": [
+    "Hybrid, full-transcript LLM summary, and the implemented recency baseline tie at 6/6 automated checks; no superiority is established.",
+    "Protected recency misses the regression evidence in the noise case because a declared pin displaces an older small evidence group.",
+    "LLMLingua misses the noise-case test/path. Its identifier-case automated failure is a forbidden-substring false positive in a correct explanatory note.",
+    "These previously inspected six synthetic cases are a development comparison, not held-out or independent confirmation."
+  ],
+  "manual_review_caveats": [
+    {
+      "case_id": "identifiers",
+      "method": "llmlingua2",
+      "observation": "All four exact required identifiers are correct. A correct explanatory note mentions the separate unrelated request ID, triggering a forbidden-substring false positive. Automated score is preserved; no post-hoc rubric change or reclassification.",
+      "automated_grade_passed": false,
+      "automated_score_preserved": true
+    }
+  ],
+  "initial_local_v1": {
+    "all_methods_all_required_passes": "0/6",
+    "completed_reader_trials": 14,
+    "trial_count": 30,
+    "schema_caveat": "Extra JSON properties were not rejected by the first-run reader checks. Archived raw outputs/scores are unchanged.",
+    "summary": "initial_local_summary.json",
+    "raw_artifact": "runs/local-512-final/results.json"
+  },
+  "not_measured": [
+    "coding task completion",
+    "native agent compaction",
+    "held-out generalization",
+    "real private coding histories",
+    "causal cost or latency improvement"
+  ],
+  "claude_authentication": "Restored before this hosted run; earlier blocked attempt remains archived.",
+  "raw_artifact": "runs/claude-512-final/results.json",
+  "selection_artifact": "runs/selection-512/results.json"
+}

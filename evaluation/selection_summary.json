@@ -1,0 +1,71 @@
+{
+  "status": "selection_and_compression_measured_qa_pending",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "cases": 6,
+  "qa_results_available": false,
+  "models": {
+    "ranker": "Qwen/Qwen3-Reranker-0.6B",
+    "compressor": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank"
+  },
+  "memory_budget": 512,
+  "hybrid_source_budget": 768,
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "long_noise_case": [
+    {
+      "method": "recency",
+      "status": "ready",
+      "counts": {
+        "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+        "target_tokens": 512,
+        "input_tokens": 4557
+      },
+      "final_memory_count": 488
+    },
+    {
+      "method": "protected_recency",
+      "status": "ready",
+      "counts": {
+        "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+        "target_tokens": 512,
+        "input_tokens": 4557
+      },
+      "final_memory_count": 483
+    },
+    {
+      "method": "full_llm_summary",
+      "status": "skipped",
+      "counts": null,
+      "final_memory_count": null
+    },
+    {
+      "method": "hybrid",
+      "status": "ready",
+      "counts": {
+        "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+        "input_tokens": 4557,
+        "target_tokens": 512,
+        "retained_tokens": 105,
+        "summary_budget_tokens": 192,
+        "selected_tokens": 746
+      },
+      "final_memory_count": null
+    },
+    {
+      "method": "llmlingua2",
+      "status": "ready",
+      "counts": {
+        "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+        "target_tokens": 512,
+        "input_tokens": 4557
+      },
+      "final_memory_count": 470
+    }
+  ],
+  "not_measured": [
+    "LLM summary quality",
+    "QA retention",
+    "coding completion",
+    "live agent compaction"
+  ],
+  "raw_artifact": "runs/selection-512/results.json"
+}

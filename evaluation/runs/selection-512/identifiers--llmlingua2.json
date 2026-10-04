@@ -1,0 +1,33 @@
+{
+  "case_id": "identifiers",
+  "difficulty": "exact_identifiers",
+  "method": "llmlingua2",
+  "evaluation_scope": "synthetic_selection_and_compression_only",
+  "counter_kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+  "compaction_seconds": 1.9745425000146497,
+  "artifact": {
+    "status": "ready",
+    "reason": null,
+    "replacement_messages": [
+      {
+        "id": "llmlingua-summary",
+        "role": "assistant",
+        "content": "[ user id = id - 1 ] \n Synthetic issue SYN - 184 concerns src / cache / ttl. ts. Trace this exact request identifier : req _ 7H4c91A2b. Compare against synthetic commit 9c7e2b1. \n \n [ assistant id = id - 2 ] \n Located src / cache / ttl. ts. The comparison commit is 9c7e2b1 ; req _ 7H4c91A2b is the relevant request. \n \n [ user id = id - 3 ] \n An unrelated discussion used req _ 7H4c91A2c, but that identifier belongs to a separate case. \n \n [ assistant id = id - 4 ] \n The expiry guard compares elapsed _ ms to ttl _ ms. I will inspect the zero - value behavior next. \n \n [ user id = id - 5 ] \n Continue with the original regression, without changing exported names. \n \n [ assistant id = id - 6 ] \n The next step is to trace the elapsed - time calculation."
+      }
+    ],
+    "compacted_tokens": 261,
+    "model": "microsoft/llmlingua-2-bert-base-multilingual-cased-meetingbank",
+    "attempts": [
+      {
+        "requested_rate": 1.0,
+        "counter_count": 261
+      }
+    ],
+    "token_accounting": {
+      "kind": "tokenizer:Qwen/Qwen3-Reranker-0.6B",
+      "target_tokens": 512,
+      "input_tokens": 244
+    }
+  },
+  "status": "ready"
+}
